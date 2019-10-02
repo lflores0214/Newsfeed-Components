@@ -153,10 +153,11 @@ function createArticle(
   articles.appendChild(articleDiv);
   articleDiv.appendChild(titles);
   articleDiv.appendChild(dates);
+  articleDiv.appendChild(span);
   articleDiv.appendChild(paragraph1);
   articleDiv.appendChild(paragraph2);
   articleDiv.appendChild(paragraph3);
-  articleDiv.appendChild(span);
+  
 
   span.addEventListener("click", e => {
     
