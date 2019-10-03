@@ -53,7 +53,10 @@ function createMenu(arr) {
   menuBtn.addEventListener("click", e => {
     console.log("button clicked", e.target);
     menuDiv.classList.toggle("menu--open");
-    console.log(menuDiv)
+    TweenMax.to('.menu--open', 0.3, {width: 350})
+    console.log(menuDiv);
+   
+    
   });
   return menuDiv;
 }
