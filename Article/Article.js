@@ -142,7 +142,7 @@ function createArticle(
 
   articleDiv.classList.add("article");
   dates.classList.add("date");
-  span.classList.add("expandBtn");
+  span.classList.add("expandButton");
 
   titles.textContent = title;
   dates.textContent = date;
@@ -163,25 +163,24 @@ function createArticle(
 
   span.addEventListener("click", () => {
     articleDiv.classList.toggle("article-open");
-    articleDiv.classList.toggle("article")
+    articleDiv.classList.toggle("article");
     console.log(articleDiv);
-    if(span.textContent === 'Click to Expand'){
-      span.textContent = 'Click to Close'
+    if (span.textContent === "Click to Expand") {
+      span.textContent = "Click to Close";
     } else {
-      span.textContent = 'Click to Expand'
+      span.textContent = "Click to Expand";
     }
-    TweenMax.to('.article-open', 2, {height:700})
-    TweenMax.to('.article', 2 ,{height:60})
+    TweenMax.to(".article-open", 1, { height: 700 });
+    TweenMax.to(".article", 1.5, { height: 50 });
   });
 
-  del.addEventListener('click', () => {
-    articles.removeChild(articleDiv)
-  })
-// close.addEventListener("click", ()=>{
-//   articleDiv.classList.toggle('article-close');
-//   TweenMax.to()
-// })
-  
+  del.addEventListener("click", () => {
+    articles.removeChild(articleDiv);
+  });
+  // close.addEventListener("click", ()=>{
+  //   articleDiv.classList.toggle('article-close');
+  //   TweenMax.to()
+  // })
 
   return articleDiv;
 }
@@ -199,3 +198,48 @@ data.forEach(data => {
 });
 
 console.log(articles);
+
+//function to create a new article
+const newArticleDiv = document.createElement("div");
+newArticleDiv.classList.add("new-article-div");
+articles.appendChild(newArticleDiv);
+
+const newArticleBtn = document.createElement("button");
+newArticleBtn.classList.add("new-article-btn");
+newArticleBtn.textContent = "Write a new article";
+newArticleDiv.append(newArticleBtn);
+console.log(newArticleDiv);
+
+
+const newArticleCreator = () => {
+  const articleForm = document.createElement("form");
+  const articelTitle = document.createElement("input");
+  const articleDate = document.createElement("input");
+  const articleParagraph = document.createElement("textarea");
+  const articleSubmit = document.createElement("input");
+
+  articleForm.classList.add("form");
+  articelTitle.classList.add("new-article");
+  articleDate.classList.add("article-date");
+  articleParagraph.classList.add("article-content");
+  articleSubmit.classList.add("submit");
+
+  articleTitle.setAttribute("type", "text");
+  articleDate.setAttribute("type", "date");
+  articleSubmit.setAttribute("type", "button");
+
+  
+  articleForm.appendChild(articelTitle);
+  articleForm.appendChild(articleDate);
+  articleForm.appendChild(articleParagraph);
+  articleForm.appendChild(articleSubmit);
+
+  newArticleBtn.addEventListener("click", (e) => {
+    articles.appendChild(articleForm);
+    newArticleDiv.classList.toggle('new-article-open')
+    console.log("clicked", e.target);
+  });
+
+  return articleForm
+};
+console.log(newArticleDiv)
