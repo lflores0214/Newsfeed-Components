@@ -8,7 +8,7 @@
   border-radius: 10px;
   background-color: white;
   position: relative;
-  height: 50px;
+  height: 45px;
   overflow: hidden;
   box-shadow: 2px 2px 2px lightgrey;
 
@@ -42,9 +42,83 @@
 }
 
 .article-open {
-  height: 400px;
+  height: 0;
+  margin: 20px 10%;
+  padding: 0 20px 25px;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  background-color: white;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 2px 2px 2px lightgrey;
+  h2 {
+    font-size: 28px;
+    padding: 0;
+    margin: 15px 0 0;
+  }
+
+  .date {
+    margin: 0;
+    font-size: 14px;
+  }
+
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  .expandButton {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    font-size: 12px;
+    color: grey;
+    cursor: pointer;
+    transform: translate(-50%);
+    background-color: white;
+  }
+}
+.article-close{
+  height: 0;
 }
 
+.new-article-div{
+    
+    height: 15px;
+    margin: 20px 10%;
+    padding: 0 20px 25px;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    background-color: white;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 2px 2px 2px lightgrey;
+
+
+  .new-article-btn{
+    position: absolute;
+      bottom: 0;
+      margin-bottom: 10px;
+      left: 50%;
+      font-size: 12px;
+      color: grey;
+      cursor: pointer;
+      transform: translate(-50%);
+      background-color: white;
+  }
+}
+.new-article-open{
+  height: 500px;
+  margin: 20px 10%;
+  padding: 0 20px 25px;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  background-color: white;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 2px 2px 2px lightgrey;
+}
 
 
 
